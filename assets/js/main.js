@@ -20,4 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
   let analyseBtnRef = document.getElementById("analyseBtn");
   analyseBtnRef.innerHTML =
     "<span>Analyse a website</span> <img width='20' src='./assets/icons/arrow-right.svg' alt='arro left'>";
+
+  demoBtnRef.addEventListener("click", () => handleButtonClick(email));
+  analyseBtnRef.addEventListener("click", () => handleButtonClick(email));
 });
+
+const isEmpty = (email) => {
+  return email.trim() === "";
+};
+const handleButtonClick = () => {
+  let email = document.getElementById("email").value;
+  if (isEmpty(email)) {
+    alert("Please enter your email address");
+    return;
+  }
+  alert(email);
+};
